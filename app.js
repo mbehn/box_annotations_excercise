@@ -11,7 +11,8 @@ const mustacheExpress = require('mustache-express');
 let app = express();
 
 /*
-	- Setting the port for the application
+	- Setting the port for the application. Our application will live at localhost:8080
+	- All Views will be at localhost:8080/view
 */
 let port = process.env.PORT || 8080;
 
@@ -76,7 +77,7 @@ app.get('/', (req, res) => {
 	- We will use the exchangeToken() method from the Node SDK to get our Annotator Token
 */
 
-const scopes = '';
+const scopes = 'item_preview item_download';
 
 // Word File
 app.get('/boxviewword', (req, res) => {
@@ -91,7 +92,6 @@ client.exchangeToken(scopes, `https://api.box.com/2.0/files/${wrdFileId}`, optio
 });
 
 // PowerPoint file
-
 app.get('/boxviewppt', (req, res) => {
 client.exchangeToken(scopes, `https://api.box.com/2.0/files/${pptFileID}`, options)
 	.then(tokenInfo => {
@@ -104,7 +104,6 @@ client.exchangeToken(scopes, `https://api.box.com/2.0/files/${pptFileID}`, optio
 });
 
 // Excel file
-
 app.get('/boxviewxls', (req, res) => {
 client.exchangeToken(scopes, `https://api.box.com/2.0/files/${xlsFileID}`, options)
 	.then(tokenInfo => {

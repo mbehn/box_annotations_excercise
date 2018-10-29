@@ -2,6 +2,7 @@
 A simple app made with the the Box Node SDK and Box View with Annotations
 
 ## Machine Setup
+- Download this repository as a .zip file by clicking Download > Zip file. Or, if you have a github account just clone it!
 - Download and install [Sublime Text 3](https://www.sublimetext.com/3) if you don't already have it. Feel free to use your Text Editor of choice.
 - Make a new Box View App (App Token) Token Application in your preferred Box demo account
 - Install [Node.js](https://nodejs.org/en/download/)
